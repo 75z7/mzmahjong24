@@ -65,6 +65,7 @@ virtualenv = "*"
 werkzeug = "*"
 mahjong = "*"
 vue = "*"
+npm = "*"
 
 [dev-packages]
 
