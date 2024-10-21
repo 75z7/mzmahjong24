@@ -63,6 +63,8 @@ tzdata = "*"
 unidiff = "*"
 virtualenv = "*"
 werkzeug = "*"
+mahjong = "*"
+vue = "*"
 
 [dev-packages]
 
