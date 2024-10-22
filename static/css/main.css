@@ -5,12 +5,11 @@
     background-color:steelblue; 
 }
 .sutehai{
-    width : 100px;
-    height : 100px;
+    text-align  : center;
     margin : auto;
 }
 .tehai{
     position      : absolute;
-    bottom        : auto;
-    margin-bottom : auto;
+    bottom        : 0;
+    margin-bottom : 0;
 }
