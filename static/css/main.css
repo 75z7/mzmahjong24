@@ -9,7 +9,9 @@
     margin : auto;
 }
 .tehai{
-    position      : absolute;
-    bottom        : 0;
+    text-align  : center;
+    margin : auto;
+    position : absolute;
+    bottom : 0;
     margin-bottom : 0;
 }
