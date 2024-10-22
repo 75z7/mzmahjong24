@@ -4,12 +4,14 @@
 .vue{
     background-color:steelblue; 
 }
-.sutehai .content{
-    text-align  : center;
+.sutehai{
+    width : 100px;
+    height : 100px;
     margin : auto;
+
 }
 .tehai{
     position      : absolute;
-    bottom        : 0;
+    bottom        : auto;
     margin-bottom : auto;
 }
