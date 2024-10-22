@@ -13,7 +13,7 @@ class Tile:
     def __init__(self, kind, value):
         self.kind = kind  # 麻雀牌の種類（萬子・筒子・索子・四風牌・三元牌）
         self.value = value  # 麻雀牌の値（1~9 東南西北白発中）
-        self.pic = f"{kind}_{value}.png"  # 画像ファイル名
+        self.pic = f"{kind}_{value}.gif"  # 画像ファイル名
 
     def __repr__(self):
         return self.pic
