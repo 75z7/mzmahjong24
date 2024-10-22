@@ -56,7 +56,7 @@ def create_yamahai():
 
 # pic(画像ファイル名)からTileオブジェクトを作成
 def tile_from_pic(pic):
-    s = re.search(r"^(.+)_(.+)\.png$", pic).groups()
+    s = re.search(r"^(.+)_(.+)\.gif$", pic).groups()
     return Tile(s[0], s[1])
 
 
