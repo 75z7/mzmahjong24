@@ -7,6 +7,13 @@ import pysen
 
 setup = pysen.setup_from_pyproject(__file__)
 
+from mahjong.hand_calculating.hand import HandCalculator
+from mahjong.tile import TilesConverter
+from mahjong.hand_calculating.hand_config import HandConfig
+from mahjong.meld import Meld
+
+calculator = HandCalculator()
+
 app = Flask(__name__)
 
 
@@ -19,7 +26,7 @@ def main():
     tehai.sort(key=lambda hai: hai.sort_info())  # 理牌
     tehai.append(yamahai.pop(0))  # 自摸
 
-    return render_template("main.html", tehai=tehai, win=mahjong.judge(tehai))
+    return render_template("main.html", tehai=tehai, win=mahjong.judge(tehai), score = HandCalculator(tehai))
 
 
 # 自摸
@@ -44,7 +51,7 @@ def change():
     tehai.append(yamahai.pop(0))  # 自摸
 
     return render_template(
-        "main.html", tehai=tehai, sutehai=sutehai, win=mahjong.judge(tehai)
+        "main.html", tehai=tehai, sutehai=sutehai, win=mahjong.judge(tehai), score = HandCalculator(tehai)
     )
 
 
