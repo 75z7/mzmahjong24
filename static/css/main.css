@@ -1,5 +1,5 @@
 .flask{
-    background-image : url(workspaces/mzmahjong24/static/pic/back.png);
+    background-image : url(/workspaces/mzmahjong24/static/pic/back.png);
 }
 .vue{
     background-color : steelblue; 
