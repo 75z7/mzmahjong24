@@ -19,9 +19,7 @@ def main():
     tehai.sort(key=lambda hai: hai.sort_info())  # 理牌
     tehai.append(yamahai.pop(0))  # 自摸
 
-    return render_template(
-        "main.html", tehai=tehai, win=mahjong.judge(tehai)
-    )
+    return render_template("main.html", tehai=tehai, win=mahjong.judge(tehai))
 
 
 # 自摸
@@ -46,10 +44,7 @@ def change():
     tehai.append(yamahai.pop(0))  # 自摸
 
     return render_template(
-        "main.html",
-        tehai=tehai,
-        sutehai=sutehai,
-        win=mahjong.judge(tehai)
+        "main.html", tehai=tehai, sutehai=sutehai, win=mahjong.judge(tehai)
     )
 
 
