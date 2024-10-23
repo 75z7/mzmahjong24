@@ -7,8 +7,8 @@
 .sutehai{
     text-align : left;
     margin : auto;
-    display: flex;
-  　justify-content: center;
+    display : flex;
+  　justify-content : center;
     zoom : 1.5;
 }
 .tehai{
@@ -17,7 +17,7 @@
     position : absolute;
     bottom : 0;
     margin-bottom : 0;
-    display: flex;
-  　justify-content: center;
+    display : flex;
+  　justify-content : center;
     zoom : 1.5;
 }
