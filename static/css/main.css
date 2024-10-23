@@ -16,6 +16,7 @@
     position : absolute;
     bottom : 0;
     margin-bottom : 0;
-    width : 85%;
+    width : 100%;
     zoom : 1.5;
+    background-color : #302732;
 }
