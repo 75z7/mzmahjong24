@@ -1,17 +1,17 @@
 .flask{
-    background-color: #356cac;
+    background-color : #356cac;
 }
 .vue{
-    background-color:steelblue; 
+    background-color : steelblue; 
 }
 .sutehai{
-    text-align  : left;
+    text-align : left;
     margin : auto;
 }
 .tehai{
-    text-align  : center;
+    text-align : center;
     margin : auto;
     position : absolute;
     bottom : 0;
-    margin-bottom : 0;
+    margin-bottom: 0;
 }
