@@ -20,6 +20,7 @@
     zoom : 1.5;
 }
 .win a{
-    display: block;
-    margin:auto;
+    display : block;
+    margin : auto;
+    width : 50%;
 }
