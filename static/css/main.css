@@ -10,6 +10,8 @@
     display : flex;
   　justify-content : center;
     width : 50%;
+    position : absolute;
+    transform: translate(-50%, -50%);
     zoom : 1.5;
 }
 .tehai{
