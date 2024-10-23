@@ -10,7 +10,7 @@
     display : flex;
     width : 50%;
     position : absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, 50%);
     zoom : 1.5;
 }
 .tehai{
