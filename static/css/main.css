@@ -9,6 +9,7 @@
     margin : auto;
     display : flex;
   　justify-content : center;
+    width : 50%;
     zoom : 1.5;
 }
 .tehai{
@@ -19,5 +20,6 @@
     margin-bottom : 0;
     display : flex;
   　justify-content : center;
+    width : 50%;
     zoom : 1.5;
 }
