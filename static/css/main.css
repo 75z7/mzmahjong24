@@ -1,4 +1,5 @@
 .flask{
+    background-image : url(static/pic/back.png);
     background-color : #356cac;
 }
 .vue{
