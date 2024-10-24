@@ -1,5 +1,5 @@
-.flask{
-    background-image : url(static/pic/back.png);
+.body{
+    background-image : url(static/pic/back.png) !important;
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
