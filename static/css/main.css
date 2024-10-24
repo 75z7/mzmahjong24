@@ -7,8 +7,9 @@
 .sutehai{
     text-align : left;
     margin : auto;
+    display : inline-block;
     width : 44%;
-    zoom : 1.5;
+    zoom : 1.25;
 }
 .tehai{
     text-align : center;
