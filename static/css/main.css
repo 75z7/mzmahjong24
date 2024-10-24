@@ -1,5 +1,5 @@
-.body{
-    background-image : url(static/pic/back.png) !important;
+.flask{
+    background-image : url(/mzmahjong24/static/pic/back.png) !important;
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
