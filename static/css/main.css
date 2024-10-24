@@ -34,7 +34,7 @@
     color: rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: #356cac;
+    background-color: rgba(0, 150, 255);
     background-image: linear-gradient(
       to top left,
       rgba(0, 0, 0, 0.2),
@@ -47,7 +47,7 @@
   }
   
   .reset:hover {
-    background-color : rgba(0, 150, 255);
+    background-color : #356cac;
   }
   
   .reset:active {
