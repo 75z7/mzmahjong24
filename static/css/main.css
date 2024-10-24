@@ -1,11 +1,9 @@
-.body{
+.flask{
+    background-color: #356cac;
     background-image : url(static/pic/back.png);
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-}
-.flask{
-    background-color: #356cac;
 }
 .vue{
     background-color : steelblue; 
