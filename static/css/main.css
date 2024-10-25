@@ -27,12 +27,8 @@
 .reset {
     border: 0;
     line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
     text-align: center;
-    color: rgba(0, 0, 0);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255);
     background-image: linear-gradient(
       to top left,
       rgba(0, 0, 0, 0.2),
@@ -44,6 +40,16 @@
     top: -13px;
     width: 40px;
     height: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    outline: 1px solid;
+    outline-color: #ffffff;
+    outline-offset: 0px;
+    display: inline-block;
+    transition: .3s;
   }
   
   .reset:hover {
