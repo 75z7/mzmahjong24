@@ -30,5 +30,25 @@
         <a class="reset" type="button" onclick="location.href='https://mzmahjong24.onrender.com/'">
             <font face="游明朝">リセット</font>
         </a>
+        <script>
+            const command = [
+                "ArrowUp"
+            ];
+            let userInput = [];
+            document.addEventListener("keyup", function (e) {
+                userInput.push(e.key);
+                userInput.splice(-command.length - 1, userInput.length - command.length);
+                if (JSON.stringify(userInput) === JSON.stringify(command)) {
+                    function playOGG(){
+                        source.loop = true;
+                        source.loopStart = 4;
+                        source.loopEnd = 136;
+                        source.start(0);
+                    }
+                    var SOUND_URL = '../static/BGM/BGM.wav';
+                    getArrayBuffer(SOUND_URL).then(createAudioBuffer).then(createBuffer).then(playOGG);
+                }
+            })
+        </script>
     </body>
 </html>
