@@ -19,13 +19,24 @@
                     const music = new Howl({
                         src: '../static/BGM/BGM.wav',
                         autoplay: true,
+                        preload: false,
                         volume: 1,
-                        loop: true,
+                        sprite: {
+                            sound1: [0, 4000],
+                            sound2: [4000, 132000],
+                            sound3: [136000, 1000],
+                        }
                     });
-                    music.play();
+                    sound.play(sound1);
+                    loop: true;
+                    sound.play(sound2);
                 }
             })
         </script>
+        <ul>
+            <li><a href=href></a></li>
+            <li><a href="./change">change</a></li>
+        </ul>
         <main data-barba="container" data-barba-namespace="top" class="flask">
             {% if win %}
                     <div class="win">
@@ -51,6 +62,7 @@
                     <font face="游明朝">リセット</font>
                 </a>
         </main>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
         integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
