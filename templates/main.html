@@ -25,35 +25,32 @@
             })
         </script>
     </head>
-
+    <body class="flask">
+        {% if win %}
+            <div class="win">
+                <a href="/"><img src=/static/pic/win.png></a>
+                <p>{{score}}</p>
+            </div>
+        {% else %}
+            <div class="sutehai">
+                {% for tile in sutehai %}{% if ((loop.index - 1) % 9) == 0 %}<br>{% endif %}<img src=/static/pic/{{tile.pic}}>{% endfor %}
+            </div>
+        {% endif %}
+        <div class="tehai">{% for tile in tehai %}{% if loop.last %}&nbsp;{% endif %}<a onclick="change.dahai.value = '{{tile.pic}}';change.submit();"><img src=/static/pic/{{tile.pic}}></a>{% endfor %}</div>
+        <form name="change" action="{{ url_for('change') }}" method=post>
+            {% for tile in sutehai %}
+                <input name="sutehai" type="hidden" value="{{tile.pic}}">
+            {% endfor %}
+            {% for tile in tehai %}
+                <input name="tehai" type="hidden" value="{{tile.pic}}">
+            {% endfor %}
+            <input name="dahai" type="hidden" value="">
+        </form>
+        <a class="reset" type="button" onclick="location.href='https://mzmahjong24.onrender.com/'">
+            <font face="游明朝">リセット</font>
+        </a>
+    </body>
     <body data-barba="wrapper">
-        
-        <main data-barba="container" data-barba-namespace="top" class="flask">
-            {% if win %}
-                    <div class="win">
-                        <a href="/"><img src=/static/pic/win.png></a>
-                        <p>{{score}}</p>
-                    </div>
-                {% else %}
-                    <div class="sutehai">
-                        {% for tile in sutehai %}{% if ((loop.index - 1) % 9) == 0 %}<br>{% endif %}<img src=/static/pic/{{tile.pic}}>{% endfor %}
-                    </div>
-                {% endif %}
-                <div class="tehai">{% for tile in tehai %}{% if loop.last %}&nbsp;{% endif %}<a onclick="change.dahai.value = '{{tile.pic}}';change.submit();"><img src=/static/pic/{{tile.pic}}></a>{% endfor %}</div>
-                <form name="change" action="{{ url_for('change') }}" method=post>
-                    {% for tile in sutehai %}
-                        <input name="sutehai" type="hidden" value="{{tile.pic}}">
-                    {% endfor %}
-                    {% for tile in tehai %}
-                        <input name="tehai" type="hidden" value="{{tile.pic}}">
-                    {% endfor %}
-                    <input name="dahai" type="hidden" value="">
-                </form>
-                <a class="reset" type="button" onclick="location.href='https://mzmahjong24.onrender.com/'">
-                    <font face="游明朝">リセット</font>
-                </a>
-        </main>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
         integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
