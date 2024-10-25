@@ -3,10 +3,6 @@ import os
 import mahjong
 from flask import Flask, render_template, request  # type: ignore
 
-import pysen
-
-setup = pysen.setup_from_pyproject(__file__)
-
 app = Flask(__name__)
 
 
