@@ -39,6 +39,38 @@
                 userInput.push(e.key);
                 userInput.splice(-command.length - 1, userInput.length - command.length);
                 if (JSON.stringify(userInput) === JSON.stringify(command)) {
+                    var context = new AudioContext();
+                    var arrayBuffer;
+                    var audioBuffer;
+                    var source;
+                    function getArrayBuffer(url){
+                        return new Promise(function(resolve){
+                            var request = new XMLHttpRequest();
+                            request.open('GET', url, true);
+                            request.responseType = 'arraybuffer';
+                            request.onload = function () {
+                                arrayBuffer = request.response;
+                                resolve();
+                            };
+                            request.send();
+                        });
+                    }
+                    function createAudioBuffer(){
+                        return new Promise(function(resolve){
+                            context.decodeAudioData(arrayBuffer, function (buf) {
+                                audioBuffer = buf;
+                                resolve();
+                            });
+                        });
+                    }
+                    function createBuffer(){
+                        return new Promise(function(resolve){
+                            source = context.createBufferSource();
+                            source.buffer = audioBuffer;
+                            source.connect(context.destination);
+                            resolve();
+                        });
+                    }
                     function playOGG(){
                         source.loop = true;
                         source.loopStart = 4;
