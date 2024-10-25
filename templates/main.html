@@ -16,27 +16,17 @@
                 userInput.push(e.key);
                 userInput.splice(-command.length - 1, userInput.length - command.length);
                 if (JSON.stringify(userInput) === JSON.stringify(command)) {
-                    const music = new Howl({
-                        src: '../static/BGM/BGM.wav',
-                        autoplay: true,
-                        preload: false,
-                        volume: 1,
-                        sprite: {
-                            sound1: [0, 4000],
-                            sound2: [4000, 132000],
-                            sound3: [136000, 1000],
-                        }
-                    });
-                    sound.play(sound1);
-                    loop: true;
-                    sound.play(sound2);
+                    function playOGG(){
+                        source.loop = true;
+                        source.loopStart = 4;
+                        source.loopEnd = 136;
+                        source.start(0);
+                    }
+                    var SOUND_URL = '../static/BGM/BGM.wav';
+                    getArrayBuffer(SOUND_URL).then(createAudioBuffer).then(createBuffer).then(playOGG);
                 }
             })
         </script>
-        <ul>
-            <li><a href=href></a></li>
-            <li><a href="./change">change</a></li>
-        </ul>
         <main data-barba="container" data-barba-namespace="top" class="flask">
             {% if win %}
                     <div class="win">
@@ -62,7 +52,7 @@
                     <font face="游明朝">リセット</font>
                 </a>
         </main>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
         integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
