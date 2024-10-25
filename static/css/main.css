@@ -38,13 +38,11 @@
     position: absolute;
     left: 1000px;
     top: 700px;
-    width: 70px;
-    height: 30px;
     background-color: #ffffff;
     color: #000000;
     padding: 1em;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1em;
     display: inline-block;
   }
   
