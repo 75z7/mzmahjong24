@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "@barba/core": "^2.10.3",
     "vue-aplayer": "^1.6.1"
-  }
+  },
+  "name": "mzmahjong24",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "howler": "^2.2.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
