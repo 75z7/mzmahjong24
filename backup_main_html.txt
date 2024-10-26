@@ -6,20 +6,59 @@
         <title>mzmahjong24</title>
         <script>
             const command = [
-                "ArrowUp"
+                "m",
+                "a",
+                "h",
+                "j",
+                "o",
+                "n",
+                "g"
             ];
             let userInput = [];
             document.addEventListener("keyup", function (e) {
                 userInput.push(e.key);
                 userInput.splice(-command.length - 1, userInput.length - command.length);
                 if (JSON.stringify(userInput) === JSON.stringify(command)) {
-                    const music = new Howl({
-                        src: '../static/BGM/BGM.wav',
-                        autoplay: true,
-                        volume: 1,
-                        loop: true,
-                    });
-                    music.play();
+                    var context = new AudioContext();
+                    var arrayBuffer;
+                    var audioBuffer;
+                    var source;
+                    function getArrayBuffer(url){
+                        return new Promise(function(resolve){
+                            var request = new XMLHttpRequest();
+                            request.open('GET', url, true);
+                            request.responseType = 'arraybuffer';
+                            request.onload = function () {
+                                arrayBuffer = request.response;
+                                resolve();
+                            };
+                            request.send();
+                        });
+                    }
+                    function createAudioBuffer(){
+                        return new Promise(function(resolve){
+                            context.decodeAudioData(arrayBuffer, function (buf) {
+                                audioBuffer = buf;
+                                resolve();
+                            });
+                        });
+                    }
+                    function createBuffer(){
+                        return new Promise(function(resolve){
+                            source = context.createBufferSource();
+                            source.buffer = audioBuffer;
+                            source.connect(context.destination);
+                            resolve();
+                        });
+                    }
+                    function playOGG(){
+                        source.loop = true;
+                        source.loopStart = 4;
+                        source.loopEnd = 136;
+                        source.start(0);
+                    }
+                    var SOUND_URL = '../static/BGM/BGM.wav';
+                    getArrayBuffer(SOUND_URL).then(createAudioBuffer).then(createBuffer).then(playOGG);
                 }
             })
         </script>
@@ -46,7 +85,15 @@
             <input name="dahai" type="hidden" value="">
         </form>
         <a class="reset" type="button" onclick="location.href='https://mzmahjong24.onrender.com/'">
-            <font face="游明朝">リセット</font>
+            <font face="游ゴシック">リセット</font>
         </a>
     </body>
+    <body data-barba="wrapper">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+        <script src="../js/custom.js"></script>
+    </body>    
 </html>
