@@ -5,7 +5,7 @@ import re
 
 # 麻雀牌のクラス
 class Tile:
-    SUUPAI = "pinzu", "manzu", "souzu"
+    SUUPAI = "manzu", "pinzu", "souzu"
     JIHAI = "sufonpai", "sangenpai"
     WINDS = "東南西北"
     COLORS = "白發中"
@@ -139,7 +139,7 @@ def judge(tehai):
     if check_kokushimusou(tehai, l_janto):
         return Kokushimusou(tehai)
 
-        # 七対子
+    # 七対子
     if len(l_janto) == 7:
         agari_hai.append(Titoitsu(l_janto))
 
